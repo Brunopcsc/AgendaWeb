@@ -1,0 +1,53 @@
+﻿@model IEnumerable<AgendaWeb.Models.Contato>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h1>Minha Agenda</h1>
+
+<p>
+    @Html.ActionLink("Adicionar Contato", "Create")
+</p>
+<form asp-controller="Home" asp-action="Index" name='form' method="get">
+    <p>
+        <input class="form-control" name="SearchString" list="datalistOptions" onchange="submitform()" placeholder="Pesquisar...">
+
+    </p>
+</form>
+<table class="table" id="alter">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.celular)
+            </th>
+            <th></th>
+        </tr>
+</thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.telefone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.celular)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.contato_id }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.contato_id }) |
+                    @Html.ActionLink("Remover", "Delete", new { id = item.contato_id })
+                </td>
+            </tr>
+        }
+
+</table>
