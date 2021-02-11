@@ -82,10 +82,11 @@
     {
         @Html.AntiForgeryToken()
 
-<div class="form-actions no-color">
+<div class="form-actions no-color nav">
 
-    <input type="submit" value="Remover" class="btn btn-danger" /> |
-    @Html.ActionLink("Voltar à lista", "Index")
+    <input type="submit" value="Remover" class="btn btn-danger" /> <a style="padding-left:20px;">
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "botaovoltar" })
+</a>
 </div>
     }
 </div>

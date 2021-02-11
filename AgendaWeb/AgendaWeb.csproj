@@ -179,6 +179,12 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Imagens\add.png" />
+    <Content Include="Content\Imagens\addDark.png" />
+    <Content Include="Content\Imagens\editar.png" />
+    <Content Include="Content\Imagens\editarDark.png" />
+    <Content Include="Content\Imagens\editarDarkHover.png" />
+    <Content Include="Content\Imagens\editarHover.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

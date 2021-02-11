@@ -77,7 +77,8 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.contato_id }) |
-    @Html.ActionLink("Voltar à lista", "Index")
+<p class="nav">
+
+    @Html.ActionLink("Editar", "Edit", new { id = Model.contato_id }, new { @class = "botaoedit" })
+    @Html.ActionLink("Voltar", "Index", null, new { @class = "botaovoltar" })
 </p>

@@ -74,8 +74,12 @@
             </div>
 
             <label class="control-label" style="font-size:11px">Campos com * são obrigatórios.</label>
-            <div class="form-group">
+            <div class="form-group nav">
                 <input type="submit" value="Adicionar" class="btn btn-primary" />
+                <a style="padding-left:20px;">
+                    @Html.ActionLink("Voltar", "Index", null, new { @class = "botaovoltar" })
+                </a>
+
             </div>
 
         </div>
@@ -83,7 +87,6 @@
 }
 
 <div>
-    @Html.ActionLink("Voltar à lista", "Index")
 </div>
 
 @section Scripts {

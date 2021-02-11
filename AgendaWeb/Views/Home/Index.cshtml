@@ -7,7 +7,7 @@
 <h1>Minha Agenda</h1>
 
 <p>
-    @Html.ActionLink("Adicionar Contato", "Create")
+    @Html.ActionLink("Button Name", "Create", null, new { @class="botaoadd" }) 
 </p>
 <form asp-controller="Home" asp-action="Index" name='form' method="get">
     <p>
@@ -29,25 +29,25 @@
             </th>
             <th></th>
         </tr>
-</thead>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.telefone)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.celular)
-                </td>
-                <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.contato_id }) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.contato_id }) |
-                    @Html.ActionLink("Remover", "Delete", new { id = item.contato_id })
-                </td>
-            </tr>
-        }
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.celular)
+            </td>
+            <td class="nav">
+                @Html.ActionLink("Editar", "Edit", new { id = item.contato_id }, new { @class = "botaoedit" }) 
+                @Html.ActionLink("Detalhes", "Details", new { id = item.contato_id }, new { @class = "botaodetalhes" }) 
+                @Html.ActionLink("Remover", "Delete", new { id = item.contato_id }, new { @class = "botaoremover" })
+            </td>
+        </tr>
+    }
 
 </table>
