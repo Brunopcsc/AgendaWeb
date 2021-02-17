@@ -18,12 +18,13 @@ namespace AgendaWeb.Controllers
         public ActionResult Index(string searchString)
         {
             var contatos = from c in db.contatos
-                           orderby c.nome
+                           orderby c.Nome
                            select c;
+            
             if (!String.IsNullOrEmpty(searchString))
             {
                 var pesquisa = searchString.ToUpper();
-                contatos = (IOrderedQueryable<Contato>)contatos.Where(s => s.nome.ToUpper().Contains(pesquisa)).Union(contatos.Where(s => s.cidade.ToUpper().Contains(pesquisa))).Union(contatos.Where(s => s.telefone.ToUpper().Contains(pesquisa))).Union(contatos.Where(s => s.celular.ToUpper().Contains(pesquisa)));
+                contatos = (IOrderedQueryable<Contato>)contatos.Where(s => s.Nome.ToUpper().Contains(pesquisa)).Union(contatos.Where(s => s.Cidade.ToUpper().Contains(pesquisa))).Union(contatos.Where(s => s.TelefoneCom.ToUpper().Contains(pesquisa))).Union(contatos.Where(s => s.Celular.ToUpper().Contains(pesquisa)));
 
             }
             return View(contatos.ToList());
@@ -55,7 +56,7 @@ namespace AgendaWeb.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "contato_id,nome,telefone,celular,endereco,bairro,cidade,estado,cep")] Contato contato)
+        public ActionResult Create([Bind(Include = "Contato_id,Nome,Email,Endereco,Numero,Bairro,Cidade,Cep,TelefoneRes,TelefoneCom,Celular,OutrosNum,Telefone0800,Informacoes")] Contato contato)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +88,7 @@ namespace AgendaWeb.Controllers
         // Para obter mais detalhes, confira https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "contato_id,nome,telefone,celular,endereco,bairro,cidade,estado,cep")] Contato contato)
+        public ActionResult Edit([Bind(Include = "Contato_id,Nome,Email,Endereco,Numero,Bairro,Cidade,Cep,TelefoneRes,TelefoneCom,Celular,OutrosNum,Telefone0800,Informacoes")] Contato contato)
         {
             if (ModelState.IsValid)
             {
@@ -110,7 +111,7 @@ namespace AgendaWeb.Controllers
             {
                 return HttpNotFound();
             }
-            return View(contato);
+            return PartialView(contato);
         }
 
         // POST: Home/Delete/5

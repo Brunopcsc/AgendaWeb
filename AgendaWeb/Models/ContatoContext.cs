@@ -9,7 +9,7 @@ namespace AgendaWeb.Models
 {
     public class ContatoContext: DbContext
     {
-        public ContatoContext() : base("DbContatos")
+        public ContatoContext() : base("MyDbConnection")
         {
         }
 

@@ -1,84 +1,147 @@
 ﻿@model AgendaWeb.Models.Contato
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes";
 }
 
+<div class="container">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalhes do contato</h4>
+            </div>
+            <div class="modal-body">
+                <dl class="row">
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
 
-<h1>Detalhes do contato</h1>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
 
-<div>
-    <h4>Contato</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.nome)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.nome)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.telefone)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Endereco)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.telefone)
-            </ddclass>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Endereco)
+                    </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.celular)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Numero)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.celular)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Numero)
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.endereco)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Bairro)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.endereco)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Bairro)
+                    </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.bairro)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Cidade)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.bairro)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Cidade)
+                    </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.cidade)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Cep)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cidade)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Cep)
+                    </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.TelefoneRes)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.estado)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.TelefoneRes)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.TelefoneCom)
+                    </dt>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.cep)
-        </dt>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.TelefoneCom)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Celular)
+                    </dt>
 
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cep)
-        </dd>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Celular)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.OutroNum)
+                    </dt>
 
-    </dl>
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.OutroNum)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Telefone0800)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Telefone0800)
+                    </dd>
+                    <dt class="col-sm-5 text-right">
+                        @Html.DisplayNameFor(model => model.Informacoes)
+                    </dt>
+
+                    <dd class="col-sm-7 text-left">
+                        @Html.DisplayFor(model => model.Informacoes)
+                    </dd>
+
+                </dl>
+
+            </div>
+            <div class="modal-footer">
+
+               
+        <a class="botaoedit edit mr-auto" data-id="@Model.Contato_id"></a>
+                @Html.ActionLink("Voltar", "Index", null, new { @class = "botaovoltar" })
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div>
-<p class="nav">
 
-    @Html.ActionLink("Editar", "Edit", new { id = Model.contato_id }, new { @class = "botaoedit" })
-    @Html.ActionLink("Voltar", "Index", null, new { @class = "botaovoltar" })
-</p>
+<div id="modal" class="modal fade" role="dialog">
+</div>
+
+
+@section scripts{
+
+    <script src="~/Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+   
+    <script>
+        $(function () {
+
+            $(".edit").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal").load("/Home/Edit?id=" + id, function () {
+                    $("#modal").modal();
+                })
+            });
+        })
+    </script>
+}
